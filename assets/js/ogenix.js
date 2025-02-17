@@ -483,10 +483,19 @@
     mobileNavContainer.innerHTML = navContent;
   }
   if ($(".sticky-header__content").length) {
+    // Get both the logo and navigation content
+    let logoContent = document.querySelector(".main-header__logo").outerHTML;
     let navContent = document.querySelector(".main-menu").innerHTML;
+    
+    // Combine them in the sticky header
     let mobileNavContainer = document.querySelector(".sticky-header__content");
-    mobileNavContainer.innerHTML = navContent;
-  }
+    mobileNavContainer.innerHTML = `
+        <div class="sticky-header__wrapper">
+            ${logoContent}
+            ${navContent}
+        </div>
+    `;
+}
 
   if ($(".mobile-nav__container .main-menu__list").length) {
     let dropdownAnchor = $(

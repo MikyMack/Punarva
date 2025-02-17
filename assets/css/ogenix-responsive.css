@@ -1262,6 +1262,10 @@
     .feature-one__single:before {
         right: -44px;
     }
+    .portfolio-details__img img{
+        height: 500px!important;
+        object-fit: cover;
+    }
 }
 
 
@@ -1285,6 +1289,7 @@
         margin-left: 0;
         margin-top: 20px;
     }
+
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1300px) {
@@ -1361,7 +1366,7 @@
     .main-slider__title {
         font-size: 48px;
         line-height: 58px;
-        margin-top: -8rem;
+        margin-top: -3rem;
     }
 
     .main-slider__btn-box {
