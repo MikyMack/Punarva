@@ -1,22 +1,4 @@
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Utility
-# Cards
-# Common
-# Form
-# Navigations
-# Animations
-# Mobile Nav
-# Search Popup
-# Page Header
-# Google Map
-# Client Carousel
---------------------------------------------------------------*/
 
-/*--------------------------------------------------------------
-# Common
---------------------------------------------------------------*/
 :root {
   --ogenix-font: 'Manrope', sans-serif;
   --ogenix-font-two: 'Caveat', cursive;
@@ -474,7 +456,25 @@ ul {
   z-index: 2;
 }
 .main-header__logo img {
-width: 120px;
+  width: 120px;
+}
+
+@media (max-width: 1199px) {
+  .main-header__logo img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 991px) {
+  .main-header__logo img {
+    width: 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-header__logo img {
+    width: 60px;
+  }
 }
 
 .main-header__right {
@@ -4457,7 +4457,7 @@ width: 120px;
 .testimonial-one {
   position: relative;
   display: block;
-  padding: 120px 0 75px;
+  padding: 0 0 75px;
   overflow: hidden;
   z-index: 2;
 }
@@ -7224,6 +7224,7 @@ width: 120px;
   background-position: center;
   background-size: cover;
   z-index: -1;
+  margin-bottom: 50px;
 }
 
 .why-choose-two__shape-1 {
@@ -13891,7 +13892,7 @@ width: 120px;
 .pricing-carousel-page {
   position: relative;
   display: block;
-  padding: 112px 0 182px;
+  padding: 0 0 182px;
 }
 
 .pricing-carousel-page .pricing-page__single {
