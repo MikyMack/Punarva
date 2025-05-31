@@ -19,6 +19,12 @@
   --ogenix-bdr-color-rgb: 234, 234, 226;
   --ogenix-letter-spacing: -0.04em;
   --ogenix-bdr-radius: 6px;
+  --eco-green: #50a72c;
+  --eco-dark-green: #418923;
+  --eco-light-green: #eaf5e6;
+  --eco-white: #ffffff;
+  --eco-light-gray: #f9f9f9;
+  --eco-text-color: #333333;
 }
 
 .row {
@@ -2436,7 +2442,7 @@ ul {
 
 .main-slider__img-one {
   position: absolute;
-  top: 105px;
+  top: 165px!important;
   right: 260px;
   transform: translateX(400px);
   z-index: 1;
@@ -4583,7 +4589,7 @@ ul {
   justify-content: center;
   width: 74px;
   height: 74px;
-  background-color: ;
+
   border-radius: 50%;
   margin: 0 auto;
 }
@@ -10642,24 +10648,25 @@ ul {
   transform: scale(.9);
 }
 
-.contact-details__contact-list li .content {
+.contact-details__contact-list li .contact-content {
   position: relative;
   display: block;
   margin-left: 15px;
 }
 
-.contact-details__contact-list li .content h4 {
+.contact-details__contact-list li .contact-content h4 {
   font-size: 16px;
   font-weight: 700;
   line-height: 30px;
 }
 
-.contact-details__contact-list li .content h4 a {
+.contact-details__contact-list li .contact-content h4 a {
   color: var(--ogenix-black);
   transition: all 900ms ease;
 }
 
-.contact-details__contact-list li .content h4 a:hover {
+
+.contact-details__contact-list li .contact-content h4 a:hover {
   color: var(--ogenix-primary);
 }
 
@@ -14057,6 +14064,18 @@ margin-bottom: 2rem;
 .nav-item span {
   font-size: 12px;
 }
+.nav-item:focus,
+.nav-item:active,
+.nav-item a:focus,
+.nav-item a:active {
+  outline: none;
+
+  color: #244019!important;
+}
+.nav-item {
+  color: #2a491d!important;
+
+}
 
 /* Hide on desktop */
 @media (min-width: 768px) {
@@ -14064,3 +14083,386 @@ margin-bottom: 2rem;
       display: none;
   }
 }
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh!important;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+  visibility: visible;
+
+}
+
+.loader-container.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.loader img {
+  width: 100px;
+  height: 100px;
+  animation: bounce 1s infinite;
+}
+
+.loader p {
+  color: #666;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Style for main content */
+.content {
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.benfit-sec{
+  margin-top: 5rem!important;
+}
+
+.eco-body {
+  background-color: #f5f5f5;
+  color: var(--eco-text-color);
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.eco-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.eco-products-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.eco-product-card {
+  background-color: var(--eco-white);
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.eco-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.eco-product-badge {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  background-color: var(--eco-green);
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 4px 8px rgba(80, 167, 44, 0.3);
+}
+
+.eco-product-image {
+  width: 40%;
+  position: relative;
+  overflow: hidden;
+}
+
+.eco-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.eco-product-card:hover .eco-product-image img {
+  transform: scale(1.05);
+}
+
+.eco-product-info {
+  width: 60%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.eco-product-top {
+  margin-bottom: 15px;
+}
+
+.eco-product-category {
+  color: var(--eco-green);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.eco-product-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--eco-text-color);
+  font-weight: 700;
+}
+
+.eco-product-meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.eco-product-rating {
+  color: orange;
+  font-size: 16px;
+  margin-right: 15px;
+}
+
+.eco-rating-count {
+  color: var(--eco-light-text);
+  font-size: 14px;
+}
+
+.eco-product-stock {
+  background-color: var(--eco-light-green);
+  color: var(--eco-dark-green);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.eco-product-description {
+  color: var(--eco-light-text);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.eco-product-features {
+ margin-top: 3rem;
+}
+
+.eco-feature-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+ 
+}
+
+.eco-feature-item {
+  font-size: 14px;
+  color: var(--eco-text-color);
+  position: relative;
+  padding-left: 22px;
+  width: calc(50% - 10px);
+}
+
+.eco-feature-item:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--eco-green);
+  font-weight: bold;
+}
+
+.eco-product-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.eco-product-price {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--eco-dark-green);
+  display: flex;
+  align-items: flex-end;
+}
+
+.eco-old-price {
+  font-size: 16px;
+  color: var(--eco-light-text);
+  text-decoration: line-through;
+  margin-left: 10px;
+  margin-bottom: 3px;
+}
+
+.eco-product-actions {
+  display: flex;
+}
+
+.eco-btn {
+  background-color: var(--eco-green);
+  color: var(--eco-white);
+  border: none;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+.eco-btn:hover {
+  background-color: var(--eco-dark-green);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(80, 167, 44, 0.3);
+  color: white;
+}
+
+.eco-btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--eco-green);
+  color: var(--eco-green);
+  margin-left: 10px;
+}
+
+.eco-btn-outline:hover {
+  background-color: var(--eco-light-green);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(80, 167, 44, 0.1);
+  color: var(--eco-green);
+}
+
+@media (max-width: 900px) {
+  .eco-feature-item {
+      width: 100%;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .eco-product-card {
+      flex-direction: column;
+  }
+  
+  .eco-product-image, .eco-product-info {
+      width: 100%;
+  }
+  
+  .eco-product-image {
+      height: 250px;
+  }
+  
+  .eco-product-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+  }
+  
+  .eco-product-actions {
+      width: 100%;
+  }
+  
+  .eco-btn {
+      flex: 1;
+      text-align: center;
+  }
+  .eco-feature-item{
+ left: 0!important;
+ position: relative;
+  }
+  .eco-feature-list{
+    width: 100%!important;
+    display: flex!important;
+    justify-content: start!important;
+    align-items: start!important;
+    padding-left: 0px;
+
+  }
+}
+@media (max-width: 770px) {
+  .eco-product-image{
+    height: 400px;
+  }
+}
+@media (max-width: 600px) {
+  .eco-product-image{
+    height: 100%;
+  }
+  .eco-product-image img{
+    border-radius: 10px;
+  }
+  .eco-product-card{
+    padding: 10px;
+  }
+}
+     
+        
+        .thumbnail {
+            width: 60px!important;
+            height: 60px!important;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            object-fit: cover;
+        }
+        
+        .thumbnail:hover {
+            border-color: #007bff;
+            transform: scale(1.05);
+        }
+        
+        .thumbnail.active {
+            border-color: #007bff;
+            box-shadow: 0 2px 8px rgba(0,123,255,0.3);
+        }
