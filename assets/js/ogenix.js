@@ -1059,3 +1059,13 @@
   $('select:not(.ignore)').niceSelect();
 
 })(jQuery);
+function hideLoader() {
+  document.getElementById('loader').classList.add('hidden');
+  document.getElementById('mainContent').classList.add('visible');
+}
+
+
+window.addEventListener('load', function() {
+ 
+  setTimeout(hideLoader, 2000); 
+});
